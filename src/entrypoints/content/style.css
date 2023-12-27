@@ -1,0 +1,112 @@
+/* VIEWS */
+
+/* views in card */
+.__hide-views #metadata #metadata-line .inline-metadata-item:first-of-type {
+  display: none !important;
+}
+
+/* separator `・` of views in card */
+.__hide-views
+  #metadata
+  #metadata-line
+  .inline-metadata-item:last-of-type::before {
+  display: none !important;
+}
+
+/* views in description */
+.__hide-views #view-count {
+  display: none !important;
+}
+
+/* views in description */
+.__hide-views
+  #primary
+  #below
+  ytd-watch-metadata
+  ytd-watch-info-text
+  div#info-container
+  yt-formatted-string
+  > span.yt-formatted-string:nth-child(1) {
+  display: none !important;
+}
+
+/* space after views in description */
+.__hide-views
+  #primary
+  #below
+  ytd-watch-metadata
+  ytd-watch-info-text
+  div#info-container
+  yt-formatted-string
+  > span.yt-formatted-string:nth-child(2) {
+  display: none !important;
+}
+
+/* channel page */
+.__hide-views
+  #metadata
+  #metadata-line
+  span.style-scope.ytd-grid-video-renderer:first-of-type {
+  display: none !important;
+}
+
+/* separator `・` */
+.__hide-views
+  #metadata
+  #metadata-line
+  span.style-scope.ytd-grid-video-renderer:first-of-type
+  + span.style-scope.ytd-grid-video-renderer::before {
+  display: none !important;
+}
+
+/* SUBSCRIBERS */
+
+/* video page */
+.__hide-subs #owner-sub-count {
+  display: none !important;
+}
+
+/* channel page */
+.__hide-subs #subscriber-count {
+  display: none;
+}
+
+/* delimiter channel page */
+.__hide-subs #subscriber-count + span.delimiter {
+  display: none;
+}
+
+/* search result channel */
+.__hide-subs ytd-channel-renderer #video-count {
+  display: none;
+}
+
+/* separator search result channel */
+.__hide-subs ytd-channel-renderer #dot {
+  display: none;
+}
+
+/* channel page links */
+.__hide-subs #channel-info #thumbnail-attribution {
+  display: none;
+}
+
+/* LIKES */
+
+/* video */
+.__hide-likes
+  like-button-view-model
+  .yt-spec-button-shape-next__button-text-content {
+  display: none !important;
+}
+
+.__hide-likes like-button-view-model .yt-spec-button-shape-next__icon {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* comment */
+
+.__hide-likes #vote-count-middle {
+  display: none !important;
+}

@@ -1,0 +1,10 @@
+.form {
+  border: none;
+  user-select: none;
+  margin: 1rem;
+  padding: 0;
+}
+
+.label {
+  margin-left: 0.5rem;
+}
