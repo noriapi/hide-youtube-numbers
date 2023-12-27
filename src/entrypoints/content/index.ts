@@ -1,8 +1,9 @@
 import "./style.css";
-import { browser } from "wxt/browser";
 
+import { browser } from "wxt/browser";
 import { defineContentScript } from "wxt/sandbox";
-import { Options, getOptions, onChangeHandler } from "~/lib/options";
+
+import { getOptions, onChangeHandler, Options } from "~/lib/options";
 
 const setStyle = (key: keyof Options, enabled: boolean) => {
   const body = document.getElementsByTagName("body")[0];
@@ -29,7 +30,7 @@ export default defineContentScript({
   matches: ["*://www.youtube.com/*"],
   runAt: "document_end",
   cssInjectionMode: "manifest",
-  main: (_ctx) => {
+  main: () => {
     initStyle();
 
     browser.storage.onChanged.addListener(

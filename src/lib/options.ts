@@ -1,5 +1,5 @@
-import { browser } from "wxt/browser";
 import { Storage } from "webextension-polyfill";
+import { browser } from "wxt/browser";
 
 const AREA_NAME = "local";
 
