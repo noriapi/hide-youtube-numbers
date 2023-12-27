@@ -1,20 +1,21 @@
 {
   "name": "hide-youtube-numbers",
-  "description": "Hide YouTube views, likes, and subscribers.",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
+  "description": "Hide YouTube views, likes, and subscribers.",
+  "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "wxt",
-    "dev:firefox": "wxt -b firefox",
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox",
-    "zip": "wxt zip",
-    "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,html}",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src && prettier --check src/**/*.{js,jsx,ts,tsx,html} && tsc --noEmit",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix && prettier --write src/**/*.{js,jsx,ts,tsx,html}",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,html}"
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox"
   },
   "dependencies": {
     "@solid-primitives/keyed": "^1.2.0",
