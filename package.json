@@ -11,7 +11,10 @@
     "build:firefox": "wxt build -b firefox",
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
-    "compile": "tsc --noEmit"
+    "compile": "tsc --noEmit",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src && prettier --check src/**/*.{js,jsx,ts,tsx,html} && tsc --noEmit",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix && prettier --write src/**/*.{js,jsx,ts,tsx,html}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,html}"
   },
   "dependencies": {
     "@solid-primitives/keyed": "^1.2.0",
@@ -21,6 +24,13 @@
   },
   "devDependencies": {
     "@types/webextension-polyfill": "^0.10.7",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-solid": "^0.13.0",
+    "prettier": "^3.1.1",
     "typescript": "^5.3.2",
     "vite": "^5.0.10",
     "vite-plugin-solid": "^2.8.0",

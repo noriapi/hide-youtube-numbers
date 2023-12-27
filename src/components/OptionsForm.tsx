@@ -1,8 +1,10 @@
 import { Entries } from "@solid-primitives/keyed";
-import { Component, Show, createResource } from "solid-js";
+import { Component, createResource, Show } from "solid-js";
 import { createStore } from "solid-js/store";
+
 import type { Options } from "~/lib/options";
 import { getOptions, setOption as setOptionStorage } from "~/lib/options";
+
 import styles from "./OptionsForm.module.css";
 
 const LABEL_MAP = {
