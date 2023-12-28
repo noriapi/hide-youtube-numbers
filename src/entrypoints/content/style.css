@@ -94,19 +94,18 @@
 /* LIKES */
 
 /* video */
-.__hide-likes
+.__hide-video-likes
   like-button-view-model
   .yt-spec-button-shape-next__button-text-content {
   display: none !important;
 }
 
-.__hide-likes like-button-view-model .yt-spec-button-shape-next__icon {
+.__hide-video-likes like-button-view-model .yt-spec-button-shape-next__icon {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 /* comment */
-
-.__hide-likes #vote-count-middle {
+.__hide-comment-likes #vote-count-middle {
   display: none !important;
 }

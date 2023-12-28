@@ -8,7 +8,8 @@ import { getOptions, setOption as setOptionStorage } from "~/lib/options";
 import styles from "./OptionsForm.module.css";
 
 const LABEL_MAP = {
-  likes: "Likes",
+  "video-likes": "Video likes",
+  "comment-likes": "Comment likes",
   views: "Views",
   subs: "Subscribers",
 };
