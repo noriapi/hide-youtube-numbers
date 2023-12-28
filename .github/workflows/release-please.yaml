@@ -19,8 +19,6 @@ jobs:
         id: release-please
         with:
           token: ${{ secrets.HIDE_YOUTUBE_NUMBERS_RELEASE_PLEASE }}
-          release-type: node
-          bump-minor-pre-major: true
 
   github-release:
     needs: release-please
