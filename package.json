@@ -29,8 +29,6 @@
     "zip:firefox": "wxt zip -b firefox"
   },
   "dependencies": {
-    "@solid-primitives/rootless": "^1.4.2",
-    "@solid-primitives/storage": "^2.1.1",
     "solid-js": "^1.7.8"
   },
   "devDependencies": {
