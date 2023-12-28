@@ -4,13 +4,15 @@ import { browser } from "wxt/browser";
 const AREA_NAME = "local";
 
 export type Options = {
-  likes: boolean;
+  "video-likes": boolean;
+  "comment-likes": boolean;
   views: boolean;
   subs: boolean;
 };
 
 export const DEFAULT_OPTIONS: Options = {
-  likes: true,
+  "video-likes": true,
+  "comment-likes": true,
   views: true,
   subs: true,
 };
