@@ -18,8 +18,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release-please
         with:
-          release-type: node
-          bump-minor-pre-major: true
+          token: ${{ secrets.HIDE_YOUTUBE_NUMBERS_RELEASE_PLEASE }}
 
   github-release:
     needs: release-please
