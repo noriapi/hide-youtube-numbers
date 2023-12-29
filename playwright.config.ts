@@ -9,6 +9,9 @@ export default defineConfig({
   // Retry on CI only.
   retries: process.env.CI ? 2 : 0,
 
+  // all tests in all files to run in parallel
+  fullyParallel: true,
+
   // Opt out of parallel tests on CI.
   workers: process.env.CI ? 1 : undefined,
 
