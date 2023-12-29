@@ -22,7 +22,7 @@ export default defineConfig({
     // Collect trace when retrying the failed test.
     trace: "on-first-retry",
     // Take screenshot of every tests.
-    screenshot: "on",
+    screenshot: { mode: "on", fullPage: true },
   },
 
   // Configure projects for major browsers.

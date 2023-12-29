@@ -56,8 +56,14 @@ test.describe("visiblity conform options", () => {
       const target = getTarget(p);
       const targetCheckbox = getCheckbox(p);
 
-      await target.scrollIntoViewIfNeeded();
-      await expect(target).toBeVisible();
+      if (label === "commentLikes") {
+        await p.videoPage.keyboard.press("End");
+
+        await target.waitFor({ state: "visible" });
+      } else {
+        await target.waitFor({ state: "visible" });
+      }
+      await target.waitFor({ state: "visible" });
       await targetCheckbox.check();
       await expect(target).not.toBeVisible();
       await targetCheckbox.uncheck();
