@@ -31,4 +31,16 @@ export default defineConfig({
   manifest: (env) => (env.manifestVersion === 2 ? manifestV2 : manifestV3),
   srcDir: "src",
   imports: false,
+  runner: {
+    startUrls: [
+      "https://www.youtube.com/",
+      "https://www.youtube.com/watch?v=rdwz7QiG0lk",
+      "https://www.youtube.com/@YouTube",
+      "https://www.youtube.com/results?search_query=youtube",
+    ],
+    chromiumArgs: ["lang=en-US"],
+    firefoxPrefs: {
+      "general.useragent.locale": "en-US",
+    },
+  },
 });
