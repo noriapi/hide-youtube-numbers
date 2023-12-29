@@ -4,23 +4,23 @@ import { openPopup } from "./pages/popup";
 test("subs should be checked", async ({ page, extensionId }) => {
   const popup = await openPopup(page, extensionId);
 
-  await expect(popup.getSubs()).toBeChecked();
+  await expect(popup.subs).toBeChecked();
 });
 
 test("views should be checked", async ({ page, extensionId }) => {
   const popup = await openPopup(page, extensionId);
 
-  await expect(popup.getViews()).toBeChecked();
+  await expect(popup.views).toBeChecked();
 });
 
 test("video likes should be checked", async ({ page, extensionId }) => {
   const popup = await openPopup(page, extensionId);
 
-  await expect(popup.getVideoLikes()).toBeChecked();
+  await expect(popup.videoLikes).toBeChecked();
 });
 
 test("comment likes should be checked", async ({ page, extensionId }) => {
   const popup = await openPopup(page, extensionId);
 
-  await expect(popup.getCommentLikes()).toBeChecked();
+  await expect(popup.commentLikes).toBeChecked();
 });
