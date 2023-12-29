@@ -5,16 +5,20 @@ export const openVideo = async (page: Page) => {
 
   const videoPage = {
     description: () => page.locator("#description"),
-    views: () => videoPage.description().getByText(/\d.* views/),
+    views: () =>
+      videoPage.description().getByText(/\d.* views/, { exact: true }),
     subscribers: () =>
       page.getByLabel("subscribers").filter({ hasText: "subscribers" }),
     videoLikeButton: () =>
       page.getByRole("button", { name: "like this video" }),
     videoLikes: () => videoPage.videoLikeButton().getByText(/\d/),
     commentLikes: () =>
-      page.locator("ytd-comment-renderer").getByLabel(/\d.* likes/),
+      page
+        .locator("ytd-comment-renderer")
+        .getByLabel(/\d.* likes/, { exact: true }),
     sidePane: () => page.locator("ytd-watch-next-secondary-results-renderer"),
-    relatedVideoViews: () => videoPage.sidePane().getByText(/\d.* views/),
+    relatedVideoViews: () =>
+      videoPage.sidePane().getByText(/\d.* views/, { exact: true }),
   };
 
   return videoPage;
