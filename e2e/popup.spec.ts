@@ -4,7 +4,7 @@ import { openPopup } from "./pages/popup";
 test("subs should be checked", async ({ page, extensionId }) => {
   const popup = await openPopup(page, extensionId);
 
-  expect(popup.getSubs()).toBeChecked();
+  await expect(popup.getSubs()).toBeChecked();
 });
 
 test("views should be checked", async ({ page, extensionId }) => {
