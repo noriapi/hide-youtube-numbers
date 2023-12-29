@@ -18,6 +18,8 @@ export default defineConfig({
   use: {
     // Collect trace when retrying the failed test.
     trace: "on-first-retry",
+    // Take screenshot of every tests.
+    screenshot: "on",
   },
 
   // Configure projects for major browsers.
