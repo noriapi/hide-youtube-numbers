@@ -51,18 +51,16 @@ test.describe("visiblity conform options", () => {
   ];
 
   testCases.forEach(([label, getTarget, getCheckbox]) => {
+    if (label === "commentLikes") {
+      // to render comments
+      test.use({ viewport: { width: 1600, height: 1200 } });
+    }
+
     test(label, async ({ page, extensionId, context }) => {
       const p = await prepare(page, extensionId, context);
       const target = getTarget(p);
       const targetCheckbox = getCheckbox(p);
 
-      if (label === "commentLikes") {
-        await p.videoPage.keyboard.press("End");
-
-        await target.waitFor({ state: "visible" });
-      } else {
-        await target.waitFor({ state: "visible" });
-      }
       await target.waitFor({ state: "visible" });
       await targetCheckbox.check();
       await expect(target).not.toBeVisible();

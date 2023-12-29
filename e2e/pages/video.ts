@@ -12,7 +12,8 @@ export const openVideo = async (page: Page) => {
   const videoLikes = videoLikeButton.getByText(/\d/);
   const commentLikes = page
     .locator("ytd-comment-renderer")
-    .getByLabel(/^\d.* likes$/);
+    .getByLabel(/^\d.* likes$/)
+    .and(page.locator(":not([hidden])")); // there are hidden element `#vote-count-left`
   const sidePane = page.locator("ytd-watch-next-secondary-results-renderer");
   const relatedVideoViews = sidePane.getByText(/^\d.* views$/);
 
