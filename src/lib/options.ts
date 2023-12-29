@@ -17,10 +17,18 @@ export const DEFAULT_OPTIONS: Options = {
   subs: true,
 };
 
-export const getOptions = () =>
-  browser.storage[AREA_NAME].get(
+export const getOptions = async () => {
+  const inStorage = await browser.storage[AREA_NAME].get(
     Object.keys(DEFAULT_OPTIONS),
-  ) as Promise<Options>;
+  );
+
+  return Object.fromEntries(
+    Object.entries(DEFAULT_OPTIONS).map(([key, defaultValue]) => [
+      key,
+      inStorage[key] ?? defaultValue,
+    ]),
+  ) as Options;
+};
 
 export const setOptions = <K extends keyof Options>(items: Pick<Options, K>) =>
   browser.storage[AREA_NAME].set(items);
