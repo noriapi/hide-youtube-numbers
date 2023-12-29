@@ -13,11 +13,13 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   // Reporter to use
-  reporter: "html",
+  reporter: process.env.CI ? [["github"], ["html"]] : "html",
 
   use: {
     // Collect trace when retrying the failed test.
     trace: "on-first-retry",
+    // Take screenshot of every tests.
+    screenshot: "on",
   },
 
   // Configure projects for major browsers.
