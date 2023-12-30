@@ -3,6 +3,7 @@
   user-select: none;
   margin: 1rem;
   padding: 0;
+  min-width: max-content;
 }
 
 .label {
