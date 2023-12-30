@@ -40,9 +40,5 @@ export default defineConfig({
       "https://www.youtube.com/@YouTube",
       "https://www.youtube.com/results?search_query=youtube",
     ],
-    chromiumArgs: ["--lang=en-US"],
-    firefoxPrefs: {
-      "general.useragent.locale": "en-US",
-    },
   },
 });
