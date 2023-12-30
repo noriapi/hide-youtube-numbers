@@ -1,5 +1,6 @@
 import { Component, createResource, For, Show } from "solid-js";
 import { createStore } from "solid-js/store";
+import { browser } from "wxt/browser";
 
 import type { Options } from "~/lib/options";
 import { getOptions, setOption as setOptionStorage } from "~/lib/options";
@@ -7,10 +8,10 @@ import { getOptions, setOption as setOptionStorage } from "~/lib/options";
 import styles from "./OptionsForm.module.css";
 
 const LABEL_MAP: [keyof Options, string][] = [
-  ["views", "Views"],
-  ["subs", "Subscribers"],
-  ["video-likes", "Video likes"],
-  ["comment-likes", "Comment likes"],
+  ["views", "optionViews"],
+  ["subs", "optionSubscribers"],
+  ["video-likes", "optionVideoLikes"],
+  ["comment-likes", "optionCommentLikes"],
 ];
 
 const Inner: Component<{ initialValues: Options }> = (props) => {
@@ -23,24 +24,26 @@ const Inner: Component<{ initialValues: Options }> = (props) => {
 
   return (
     <fieldset class={styles.form}>
-      <legend>Hide</legend>
+      <legend>{browser.i18n.getMessage("optionHide")}</legend>
 
       <For each={LABEL_MAP}>
-        {([key, label]) => (
+        {([optionKey, messageName]) => (
           <div>
             <label>
               <input
                 type="checkbox"
-                id={key}
+                id={optionKey}
                 name="hide"
-                value={key}
-                checked={options[key]}
+                value={optionKey}
+                checked={options[optionKey]}
                 onInput={(e) =>
-                  setOption(key as keyof Options, e.target.checked)
+                  setOption(optionKey as keyof Options, e.target.checked)
                 }
               />
 
-              <span class={styles.label}>{label}</span>
+              <span class={styles.label}>
+                {browser.i18n.getMessage(messageName)}
+              </span>
             </label>
           </div>
         )}

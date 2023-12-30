@@ -2,7 +2,9 @@ import Solid from "vite-plugin-solid";
 import { defineConfig } from "wxt";
 
 const manifestBase = {
-  name: "Hide YouTube Numbers",
+  name: "__MSG_extName__",
+  description: "__MSG_extDescription__",
+  default_locale: "en",
   permissions: ["storage"],
   author: "noriapi",
   homepage_url: "https://github.com/noriapi/hide-youtube-numbers",

@@ -1,0 +1,26 @@
+{
+  "extDescription": {
+    "message": "YouTube に表示される視聴者数、高評価数、登録者数を隠します。"
+  },
+
+  "optionHide": {
+    "message": "隠すもの",
+    "description": "Option title."
+  },
+  "optionViews": {
+    "message": "視聴者数",
+    "description": "Option to hide the number of viewers."
+  },
+  "optionSubscribers": {
+    "message": "登録者数",
+    "description": "Option to hide the number of subscribers."
+  },
+  "optionVideoLikes": {
+    "message": "動画の高評価数",
+    "description": "Option to hide the number of video likes."
+  },
+  "optionCommentLikes": {
+    "message": "コメントの高評価数",
+    "description": "Option to hide the number of comment likes."
+  }
+}

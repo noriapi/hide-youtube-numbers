@@ -1,0 +1,31 @@
+{
+  "extName": {
+    "message": "Hide YouTube Numbers",
+    "description": "Name of the extension."
+  },
+  "extDescription": {
+    "message": "Hide YouTube views, likes, and subscribers.",
+    "description": "Description of the extension."
+  },
+
+  "optionHide": {
+    "message": "Hide",
+    "description": "Option title."
+  },
+  "optionViews": {
+    "message": "Views",
+    "description": "Option to hide the number of viewers."
+  },
+  "optionSubscribers": {
+    "message": "Subscribers",
+    "description": "Option to hide the number of subscribers."
+  },
+  "optionVideoLikes": {
+    "message": "Video Likes",
+    "description": "Option to hide the number of video likes."
+  },
+  "optionCommentLikes": {
+    "message": "Comment Likes",
+    "description": "Option to hide the number of comment likes."
+  }
+}
