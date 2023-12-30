@@ -7,11 +7,11 @@ import { getOptions, setOption as setOptionStorage } from "~/lib/options";
 
 import styles from "./OptionsForm.module.css";
 
-const OPTION_KEYS: (keyof Options)[] = [
-  "views",
-  "subs",
-  "video-likes",
-  "comment-likes",
+const LABEL_MAP: [keyof Options, string][] = [
+  ["views", "optionViews"],
+  ["subs", "optionSubscribers"],
+  ["video-likes", "optionVideoLikes"],
+  ["comment-likes", "optionCommentLikes"],
 ];
 
 const Inner: Component<{ initialValues: Options }> = (props) => {
@@ -26,22 +26,24 @@ const Inner: Component<{ initialValues: Options }> = (props) => {
     <fieldset class={styles.form}>
       <legend>Hide</legend>
 
-      <For each={OPTION_KEYS}>
-        {(key) => (
+      <For each={LABEL_MAP}>
+        {([optionKey, messageName]) => (
           <div>
             <label>
               <input
                 type="checkbox"
-                id={key}
+                id={optionKey}
                 name="hide"
-                value={key}
-                checked={options[key]}
+                value={optionKey}
+                checked={options[optionKey]}
                 onInput={(e) =>
-                  setOption(key as keyof Options, e.target.checked)
+                  setOption(optionKey as keyof Options, e.target.checked)
                 }
               />
 
-              <span class={styles.label}>{browser.i18n.getMessage(key)}</span>
+              <span class={styles.label}>
+                {browser.i18n.getMessage(messageName)}
+              </span>
             </label>
           </div>
         )}

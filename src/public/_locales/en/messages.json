@@ -8,19 +8,19 @@
     "description": "Description of the extension."
   },
 
-  "views": {
+  "optionViews": {
     "message": "Views",
     "description": "Option to hide the number of viewers."
   },
-  "subs": {
+  "optionSubscribers": {
     "message": "Subscribers",
     "description": "Option to hide the number of subscribers."
   },
-  "video-likes": {
+  "optionVideoLikes": {
     "message": "Video Likes",
     "description": "Option to hide the number of video likes."
   },
-  "comment-likes": {
+  "optionCommentLikes": {
     "message": "Comment Likes",
     "description": "Option to hide the number of comment likes."
   }

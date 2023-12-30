@@ -3,19 +3,19 @@
     "message": "YouTube に表示される視聴者数、高評価数、登録者数を隠します。"
   },
 
-  "views": {
+  "optionViews": {
     "message": "視聴者数",
     "description": "Option to hide the number of viewers."
   },
-  "subs": {
+  "optionSubscribers": {
     "message": "登録者数",
     "description": "Option to hide the number of subscribers."
   },
-  "video-likes": {
+  "optionVideoLikes": {
     "message": "動画の高評価数",
     "description": "Option to hide the number of video likes."
   },
-  "comment-likes": {
+  "optionCommentLikes": {
     "message": "コメントの高評価数",
     "description": "Option to hide the number of comment likes."
   }
