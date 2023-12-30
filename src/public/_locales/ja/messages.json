@@ -3,6 +3,10 @@
     "message": "YouTube に表示される視聴者数、高評価数、登録者数を隠します。"
   },
 
+  "optionHide": {
+    "message": "隠すもの",
+    "description": "Option title."
+  },
   "optionViews": {
     "message": "視聴者数",
     "description": "Option to hide the number of viewers."

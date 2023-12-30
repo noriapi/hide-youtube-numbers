@@ -24,7 +24,7 @@ const Inner: Component<{ initialValues: Options }> = (props) => {
 
   return (
     <fieldset class={styles.form}>
-      <legend>Hide</legend>
+      <legend>{browser.i18n.getMessage("optionHide")}</legend>
 
       <For each={LABEL_MAP}>
         {([optionKey, messageName]) => (

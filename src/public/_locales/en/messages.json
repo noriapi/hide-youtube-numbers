@@ -8,6 +8,10 @@
     "description": "Description of the extension."
   },
 
+  "optionHide": {
+    "message": "Hide",
+    "description": "Option title."
+  },
   "optionViews": {
     "message": "Views",
     "description": "Option to hide the number of viewers."
