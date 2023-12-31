@@ -37,6 +37,9 @@ devDependencies:
   eslint-plugin-solid:
     specifier: ^0.13.1
     version: 0.13.1(eslint@8.56.0)(typescript@5.3.3)
+  globals:
+    specifier: ^13.24.0
+    version: 13.24.0
   playwright:
     specifier: ^1.40.1
     version: 1.40.1
