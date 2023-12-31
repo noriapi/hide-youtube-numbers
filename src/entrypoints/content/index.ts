@@ -17,13 +17,17 @@ const setStyle = (key: keyof Options, enabled: boolean) => {
 
 const setStyles = (options: Partial<Options>) => {
   Object.entries(options).forEach(([key, enabled]) =>
-    setStyle(key as any, enabled),
+    setStyle(key as keyof Options, enabled),
   );
 };
 
-const initStyle = async () => {
-  const options = await getOptions();
-  setStyles(options);
+const initStyle = () => {
+  getOptions()
+    .then((options) => setStyles(options))
+    .catch((reason) =>
+      // eslint-disable-next-line no-console
+      console.error("[hide-youtube-numbers]: Failed to get options", reason),
+    );
 };
 
 export default defineContentScript({
