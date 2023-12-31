@@ -34,7 +34,7 @@ export const setOptions = <K extends keyof Options>(items: Pick<Options, K>) =>
   browser.storage[AREA_NAME].set(items);
 
 export const setOption = <K extends keyof Options>(key: K, value: Options[K]) =>
-  setOptions({ [key]: value } as any);
+  setOptions({ [key]: value } as Pick<Options, K>);
 
 const newValuesFromChanges = (
   changes: Storage.StorageChange,
@@ -43,8 +43,10 @@ const newValuesFromChanges = (
     Object.entries(changes)
       .filter(
         ([key, change]) =>
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           key in DEFAULT_OPTIONS && change.newValue !== change.oldValue,
       )
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       .map(([key, change]) => [key, change.newValue]),
   );
 
@@ -61,7 +63,7 @@ export const initOptions = async () => {
 
   const lacking = Object.fromEntries(
     Object.entries(DEFAULT_OPTIONS).filter(([key]) => !(key in options)),
-  );
+  ) as Pick<Options, keyof Options>;
 
-  return setOptions(lacking as any);
+  return setOptions(lacking);
 };

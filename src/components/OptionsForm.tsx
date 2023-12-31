@@ -19,7 +19,13 @@ const Inner: Component<{ initialValues: Options }> = (props) => {
 
   const setOption = <K extends keyof Options>(key: K, value: Options[K]) => {
     setStoreOptions(key, value);
-    setOptionStorage(key, value);
+    setOptionStorage(key, value).catch((reason) =>
+      // eslint-disable-next-line no-console
+      console.error(
+        `[hide-youtube-numbers]: Failed to set option ${key}`,
+        reason,
+      ),
+    );
   };
 
   return (

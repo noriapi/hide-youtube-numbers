@@ -37,10 +37,12 @@ const srcConfig = {
   languageOptions: {
     parserOptions: {
       sourceType: "module",
+      project: "tsconfig.json",
     },
     globals: { ...globals.browser, ...globals.es2021 },
   },
   rules: {
+    ...ts.configs["recommended-type-checked"].rules,
     "no-console": "warn",
     "@typescript-eslint/no-explicit-any": "off",
   },
