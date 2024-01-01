@@ -5,6 +5,7 @@ export async function openPopup(page: Page, extensionId: string) {
 
   const checkbox = {
     views: page.getByRole("checkbox", { name: "Views" }),
+    viewsTooltip: page.getByRole("checkbox", { name: "Views in tooltip" }),
     subscribers: page.getByRole("checkbox", { name: "Subscribers" }),
     videoLikes: page.getByRole("checkbox", { name: "Video likes" }),
     commentLikes: page.getByRole("checkbox", { name: "Comment likes" }),

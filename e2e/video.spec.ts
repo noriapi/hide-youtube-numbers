@@ -96,4 +96,18 @@ test.describe("visiblity conform options", () => {
       await expect(target).toBeVisible();
     });
   });
+
+  test.only("description tooltip", async ({ page, extensionId, context }) => {
+    const p = await prepare(page, extensionId, context);
+    const target = p.video.descriptionInfoTooltip;
+    const targetCheckbox = p.popup.checkbox.viewsTooltip;
+
+    await p.video.descriptionInfoContainer.hover();
+
+    await target.waitFor({ state: "visible" });
+    await targetCheckbox.check();
+    await expect(target).not.toBeVisible();
+    await targetCheckbox.uncheck();
+    await expect(target).toBeVisible();
+  });
 });
