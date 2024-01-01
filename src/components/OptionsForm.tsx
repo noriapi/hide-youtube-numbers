@@ -4,15 +4,17 @@ import { browser } from "wxt/browser";
 
 import type { Options } from "~/lib/options";
 import { getOptions, setOption as setOptionStorage } from "~/lib/options";
+import { assert, IsExact } from "conditional-type-checks";
 
 import styles from "./OptionsForm.module.css";
 
-const LABEL_MAP: [keyof Options, string][] = [
+const LABEL_MAP = [
   ["views", "optionViews"],
   ["subs", "optionSubscribers"],
   ["video-likes", "optionVideoLikes"],
   ["comment-likes", "optionCommentLikes"],
-];
+] as const;
+assert<IsExact<(typeof LABEL_MAP)[number][0], keyof Options>>(true);
 
 const Inner: Component<{ initialValues: Options }> = (props) => {
   const [options, setStoreOptions] = createStore(props.initialValues);
