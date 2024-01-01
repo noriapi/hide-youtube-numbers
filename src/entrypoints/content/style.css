@@ -66,6 +66,17 @@
   display: none !important;
 }
 
+/* in description */
+.__hide-subs
+  ytd-watch-metadata
+  #description
+  ytd-video-description-infocards-section-renderer
+  #header
+  #header-text
+  #subtitle {
+  display: none !important;
+}
+
 /* channel page */
 .__hide-subs #subscriber-count {
   display: none;
