@@ -1,10 +1,10 @@
+import { assert, IsExact } from "conditional-type-checks";
 import { Component, createResource, For, Show } from "solid-js";
 import { createStore } from "solid-js/store";
 import { browser } from "wxt/browser";
 
 import type { Options } from "~/lib/options";
 import { getOptions, setOption as setOptionStorage } from "~/lib/options";
-import { assert, IsExact } from "conditional-type-checks";
 
 import styles from "./OptionsForm.module.css";
 
