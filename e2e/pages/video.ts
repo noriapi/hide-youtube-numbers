@@ -5,7 +5,9 @@ export const openVideo = async (page: Page) => {
 
   const description = page.locator("ytd-watch-metadata div#description");
   const descriptionMore = description.getByRole("button", { name: "...more" });
-  const descriptionInfoContainer = description.locator("div#info-container");
+  const descriptionInfoContainer = description.locator(
+    "#ytd-watch-info-text #info-container",
+  );
   const descriptionInfoTooltip = description.getByRole("tooltip", {
     name: /^\d.* views .*$/,
   });

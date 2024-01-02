@@ -59,6 +59,15 @@
   display: none !important;
 }
 
+/* tooltip with views */
+.__hide-tooltip
+  ytd-watch-metadata
+  #description
+  ytd-watch-info-text
+  tp-yt-paper-tooltip {
+  display: none !important;
+}
+
 /* SUBSCRIBERS */
 
 /* video page */

@@ -12,7 +12,7 @@
     "description": "Option to hide the number of viewers."
   },
   "optionTooltip": {
-    "message": "ツールチップ",
+    "message": "視聴者数を含むツールチップ",
     "description": "Option to hide a tooltip with the number of viewers."
   },
   "optionSubscribers": {

@@ -17,7 +17,7 @@
     "description": "Option to hide the number of viewers."
   },
   "optionTooltip": {
-    "message": "Tooltip",
+    "message": "Tooltip with Views",
     "description": "Option to hide a tooltip with the number of viewers."
   },
   "optionSubscribers": {
