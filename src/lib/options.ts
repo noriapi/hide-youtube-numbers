@@ -7,6 +7,7 @@ export type Options = {
   "video-likes": boolean;
   "comment-likes": boolean;
   views: boolean;
+  tooltip: boolean;
   subs: boolean;
 };
 
@@ -14,6 +15,7 @@ export const DEFAULT_OPTIONS: Options = {
   "video-likes": true,
   "comment-likes": true,
   views: true,
+  tooltip: true,
   subs: true,
 };
 

@@ -26,31 +26,73 @@ test.describe("visiblity conform options", () => {
 
   type P = Awaited<ReturnType<typeof prepare>>;
 
-  const testCases: [string, (p: P) => Locator, (p: P) => Locator][] = [
-    ["views", ({ video }) => video.views, ({ popup }) => popup.checkbox.views],
+  const withExpandDescription =
+    (f: typeof prepare) =>
+    async (...args: Parameters<typeof prepare>) => {
+      const p = await f(...args);
+      await p.video.descriptionMore.click();
+      return p;
+    };
+
+  const withHoverTooltip =
+    (f: typeof prepare) =>
+    async (...args: Parameters<typeof prepare>) => {
+      const p = await f(...args);
+      await p.video.descriptionInfoContainer.hover();
+      return p;
+    };
+
+  const testCases: [
+    string,
+    (p: P) => Locator,
+    (p: P) => Locator,
+    typeof prepare,
+  ][] = [
+    [
+      "views",
+      ({ video }) => video.views,
+      ({ popup }) => popup.checkbox.views,
+      prepare,
+    ],
     [
       "subscribers",
       ({ video }) => video.subscribers,
       ({ popup }) => popup.checkbox.subscribers,
+      prepare,
     ],
     [
       "videoLikes",
       ({ video }) => video.videoLikes,
       ({ popup }) => popup.checkbox.videoLikes,
+      prepare,
     ],
     [
       "commentLikes",
       ({ video }) => video.commentLikes.first(),
       ({ popup }) => popup.checkbox.commentLikes,
+      prepare,
     ],
     [
       "relatedVideosViews",
       ({ video }) => video.relatedVideoViews.first(),
       ({ popup }) => popup.checkbox.views,
+      prepare,
+    ],
+    [
+      "subscribers in description",
+      ({ video }) => video.subscribersInDescription,
+      ({ popup }) => popup.checkbox.subscribers,
+      withExpandDescription(prepare),
+    ],
+    [
+      "description tooltip",
+      ({ video }) => video.descriptionInfoTooltip,
+      ({ popup }) => popup.checkbox.viewsTooltip,
+      withHoverTooltip(prepare),
     ],
   ];
 
-  testCases.forEach(([label, getTarget, getCheckbox]) => {
+  testCases.forEach(([label, getTarget, getCheckbox, prepare]) => {
     if (label === "commentLikes") {
       // to render comments
       test.use({ viewport: { width: 1600, height: 1200 } });

@@ -1,9 +1,22 @@
 import js from "@eslint/js";
-import tsParser from "@typescript-eslint/parser";
 import ts from "@typescript-eslint/eslint-plugin";
-import globals from "globals";
-import solid from "eslint-plugin-solid/configs/typescript.js";
+import tsParser from "@typescript-eslint/parser";
 import prettier from "eslint-config-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import solid from "eslint-plugin-solid/configs/typescript.js";
+import globals from "globals";
+
+/** @type { import("eslint").Linter.FlatConfig } */
+const baseConfig = {
+  files: ["**/*.{js,jsx,ts,tsx}"],
+  plugins: {
+    "simple-import-sort": simpleImportSort,
+  },
+  rules: {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+  },
+};
 
 /** @type { import("eslint").Linter.FlatConfig } */
 const tsConfig = {
@@ -73,6 +86,7 @@ export default [
     ignores: [".output/*", ".wxt/*"],
   },
   js.configs.recommended,
+  baseConfig,
   tsConfig,
   solidConfig,
   srcConfig,
