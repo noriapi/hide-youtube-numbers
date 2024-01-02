@@ -10,6 +10,7 @@ import styles from "./OptionsForm.module.css";
 
 const LABEL_MAP = [
   ["views", "optionViews"],
+  ["tooltip", "optionTooltip"],
   ["subs", "optionSubscribers"],
   ["video-likes", "optionVideoLikes"],
   ["comment-likes", "optionCommentLikes"],

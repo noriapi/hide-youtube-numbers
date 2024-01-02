@@ -34,6 +34,14 @@ test.describe("visiblity conform options", () => {
       return p;
     };
 
+  const withHoverTooltip =
+    (f: typeof prepare) =>
+    async (...args: Parameters<typeof prepare>) => {
+      const p = await f(...args);
+      await p.video.descriptionInfoContainer.hover();
+      return p;
+    };
+
   const testCases: [
     string,
     (p: P) => Locator,
@@ -75,6 +83,12 @@ test.describe("visiblity conform options", () => {
       ({ video }) => video.subscribersInDescription,
       ({ popup }) => popup.checkbox.subscribers,
       withExpandDescription(prepare),
+    ],
+    [
+      "description tooltip",
+      ({ video }) => video.descriptionInfoTooltip,
+      ({ popup }) => popup.checkbox.viewsTooltip,
+      withHoverTooltip(prepare),
     ],
   ];
 
