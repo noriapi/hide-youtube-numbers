@@ -34,6 +34,14 @@ test.describe("visiblity conform options", () => {
       return p;
     };
 
+  const withHoverTooltip =
+    (f: typeof prepare) =>
+    async (...args: Parameters<typeof prepare>) => {
+      const p = await f(...args);
+      await p.video.descriptionInfoContainer.hover();
+      return p;
+    };
+
   const testCases: [
     string,
     (p: P) => Locator,
@@ -76,6 +84,12 @@ test.describe("visiblity conform options", () => {
       ({ popup }) => popup.checkbox.subscribers,
       withExpandDescription(prepare),
     ],
+    [
+      "description tooltip",
+      ({ video }) => video.descriptionInfoTooltip,
+      ({ popup }) => popup.checkbox.viewsTooltip,
+      withHoverTooltip(prepare),
+    ],
   ];
 
   testCases.forEach(([label, getTarget, getCheckbox, prepare]) => {
@@ -95,19 +109,5 @@ test.describe("visiblity conform options", () => {
       await targetCheckbox.uncheck();
       await expect(target).toBeVisible();
     });
-  });
-
-  test.only("description tooltip", async ({ page, extensionId, context }) => {
-    const p = await prepare(page, extensionId, context);
-    const target = p.video.descriptionInfoTooltip;
-    const targetCheckbox = p.popup.checkbox.viewsTooltip;
-
-    await p.video.descriptionInfoContainer.hover();
-
-    await target.waitFor({ state: "visible" });
-    await targetCheckbox.check();
-    await expect(target).not.toBeVisible();
-    await targetCheckbox.uncheck();
-    await expect(target).toBeVisible();
   });
 });
