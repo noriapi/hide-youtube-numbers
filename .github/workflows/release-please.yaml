@@ -74,6 +74,9 @@ jobs:
   store-release:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created }}
+    strategy:
+      matrix:
+        target: [chrome, firefox]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -106,14 +109,25 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: build zip (chrome)
+        if: ${{ matrix.target == 'chrome' }}
+        run: pnpm zip
+
       - name: build zip (firefox)
+        if: ${{ matrix.target == 'firefox' }}
         run: pnpm zip:firefox
 
-      - name: publish
+      - name: submit (chrome)
+        if: ${{ matrix.target == 'chrome' }}
+        env:
+          CHROME_CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
+          CHROME_CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
+          CHROME_REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
+        run: pnpm submit
+
+      - name: submit (firefox)
+        if: ${{ matrix.target == 'firefox' }}
         env:
           FIREFOX_JWT_ISSUER: ${{ secrets.MOZILLA_JWT_ISSUER }}
           FIREFOX_JWT_SECRET: ${{ secrets.MOZILLA_JWT_SECRET }}
-        run: |
-          pnpm publish-extension \
-            --firefox-zip ".output/hide-youtube-numbers--firefox.zip" \
-            --firefox-sources-zip ".output/*sources.zip" \
+        run: pnpm submit:firefox
