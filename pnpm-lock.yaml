@@ -25,6 +25,9 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^6.16.0
     version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
+  conditional-type-checks:
+    specifier: ^1.0.6
+    version: 1.0.6
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -1546,6 +1549,10 @@ packages:
       inherits: 2.0.4
       readable-stream: 2.3.8
       typedarray: 0.0.6
+    dev: true
+
+  /conditional-type-checks@1.0.6:
+    resolution: {integrity: sha512-3vyi+yNcmKq+xl1sTX7Ta+4pUvjusMYbC6FSbrS6YJV8TI51wiRn24u4bfdFVhDKKH5GtpKQzxW7bqXbPWllgQ==}
     dev: true
 
   /config-chain@1.1.13:

@@ -1,3 +1,4 @@
+import { assert, IsExact } from "conditional-type-checks";
 import { Component, createResource, For, Show } from "solid-js";
 import { createStore } from "solid-js/store";
 import { browser } from "wxt/browser";
@@ -7,13 +8,14 @@ import { getOptions, setOption as setOptionStorage } from "~/lib/options";
 
 import styles from "./OptionsForm.module.css";
 
-const LABEL_MAP: [keyof Options, string][] = [
+const LABEL_MAP = [
   ["views", "optionViews"],
   ["tooltip", "optionTooltip"],
   ["subs", "optionSubscribers"],
   ["video-likes", "optionVideoLikes"],
   ["comment-likes", "optionCommentLikes"],
-];
+] as const;
+assert<IsExact<(typeof LABEL_MAP)[number][0], keyof Options>>(true);
 
 const Inner: Component<{ initialValues: Options }> = (props) => {
   const [options, setStoreOptions] = createStore(props.initialValues);
