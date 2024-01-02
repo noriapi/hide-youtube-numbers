@@ -69,6 +69,14 @@ const configConfig = {
   },
 };
 
+/** @type { import("eslint").Linter.FlatConfig } */
+const scriptConfig = {
+  files: ["scripts/**/*"],
+  languageOptions: {
+    globals: { ...globals.node },
+  },
+};
+
 /** @type { import("eslint").Linter.FlatConfig[] } */
 export default [
   {
@@ -83,5 +91,6 @@ export default [
   solidConfig,
   srcConfig,
   configConfig,
+  scriptConfig,
   prettier,
 ];
