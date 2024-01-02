@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0](https://github.com/noriapi/hide-youtube-numbers/compare/hide-youtube-numbers-v0.2.0...hide-youtube-numbers-v0.3.0) (2024-01-02)
+
+
+### Features
+
+* **core:** add feature to hide tooltip ([#57](https://github.com/noriapi/hide-youtube-numbers/issues/57)) ([8becc84](https://github.com/noriapi/hide-youtube-numbers/commit/8becc8454f726bd26f0b6210ca04af39de990dd6))
+* **i18n:** add japanese ([#49](https://github.com/noriapi/hide-youtube-numbers/issues/49)) ([e9f6ac8](https://github.com/noriapi/hide-youtube-numbers/commit/e9f6ac89fc5c91e04f8f0aa12414445e7f6833a1))
+
+
+### Bug Fixes
+
+* **core:** fix to hide subscribers in expanded description ([#56](https://github.com/noriapi/hide-youtube-numbers/issues/56)) ([789c1f2](https://github.com/noriapi/hide-youtube-numbers/commit/789c1f2bc983b7129e5819024662e62fdbaffe5d))
+
 ## [0.2.0](https://github.com/noriapi/hide-youtube-numbers/compare/hide-youtube-numbers-v0.1.0...hide-youtube-numbers-v0.2.0) (2023-12-30)
 
 
