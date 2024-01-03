@@ -59,7 +59,7 @@
     "vite-plugin-solid": "^2.8.0",
     "wxt": "^0.13.2"
   },
-  "packageManager": "pnpm@8.13.1+sha256.9e5f62ce5f2b7d4ceb3c2848f41cf0b33032c24d683c7088b53f62b1885fb246",
+  "packageManager": "pnpm@8.14.0",
   "volta": {
     "node": "20.10.0"
   }
