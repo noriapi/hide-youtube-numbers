@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/noriapi/hide-youtube-numbers/compare/hide-youtube-numbers-v0.3.0...hide-youtube-numbers-v0.3.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* **ui:** fix entrypoints title ([#68](https://github.com/noriapi/hide-youtube-numbers/issues/68)) ([aa620d6](https://github.com/noriapi/hide-youtube-numbers/commit/aa620d6c4fdb346c3cc31a5894f88ee0999725f4))
+
 ## [0.3.0](https://github.com/noriapi/hide-youtube-numbers/compare/hide-youtube-numbers-v0.2.0...hide-youtube-numbers-v0.3.0) (2024-01-02)
 
 
