@@ -26,8 +26,8 @@
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,html}",
     "lint": "eslint . && prettier --check src/**/*.{js,jsx,ts,tsx,html} && tsc --noEmit",
     "lint:fix": "eslint --fix . && prettier --write src/**/*.{js,jsx,ts,tsx,html}",
-    "submit": "env-cmd -f .env.submit -- tsx scripts/submit.ts",
-    "submit:firefox": "env-cmd -f .env.submit -- tsx scripts/submit.ts -b firefox",
+    "submit": "env-cmd -f .env.submit --silent -- tsx scripts/submit.ts",
+    "submit:firefox": "env-cmd -f .env.submit --silent -- tsx scripts/submit.ts -b firefox",
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox"
   },
