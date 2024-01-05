@@ -39,22 +39,20 @@ export const setOption = <K extends keyof Options>(key: K, value: Options[K]) =>
   setOptions({ [key]: value } as Pick<Options, K>);
 
 const newValuesFromChanges = (
-  changes: Storage.StorageChange,
+  changes: Record<string, Storage.StorageChange>,
 ): Partial<Options> =>
   Object.fromEntries(
     Object.entries(changes)
       .filter(
         ([key, change]) =>
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           key in DEFAULT_OPTIONS && change.newValue !== change.oldValue,
       )
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       .map(([key, change]) => [key, change.newValue]),
   );
 
 export const onChangeHandler =
   (callback: (newValues: Partial<Options>) => void) =>
-  (changes: Storage.StorageChange, areaName: string) => {
+  (changes: Record<string, Storage.StorageChange>, areaName: string) => {
     if (areaName === AREA_NAME) {
       callback(newValuesFromChanges(changes));
     }
