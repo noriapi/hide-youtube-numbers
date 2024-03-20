@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.2](https://github.com/noriapi/hide-youtube-numbers/compare/hide-youtube-numbers-v0.3.1...hide-youtube-numbers-v0.3.2) (2024-03-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency solid-js to ^1.8.10 ([#84](https://github.com/noriapi/hide-youtube-numbers/issues/84)) ([9990ba9](https://github.com/noriapi/hide-youtube-numbers/commit/9990ba9710a9dd9aafe4f3c808a4eca5ac9bbfb8))
+* **deps:** update dependency solid-js to ^1.8.11 ([#90](https://github.com/noriapi/hide-youtube-numbers/issues/90)) ([6c9f10e](https://github.com/noriapi/hide-youtube-numbers/commit/6c9f10efce3f8c9ada2a06b38fce6de0df495839))
+* **deps:** update dependency solid-js to ^1.8.12 ([#117](https://github.com/noriapi/hide-youtube-numbers/issues/117)) ([c2ca661](https://github.com/noriapi/hide-youtube-numbers/commit/c2ca6610960c1957ef7d534fffd49cf92318b75e))
+* **deps:** update dependency solid-js to ^1.8.13 ([#139](https://github.com/noriapi/hide-youtube-numbers/issues/139)) ([f7c24a2](https://github.com/noriapi/hide-youtube-numbers/commit/f7c24a2bdce8983676b289cdfe31567f05a3e55f))
+* **deps:** update dependency solid-js to ^1.8.14 ([#141](https://github.com/noriapi/hide-youtube-numbers/issues/141)) ([9b87377](https://github.com/noriapi/hide-youtube-numbers/commit/9b87377c461f6dbc640ff7a3efb5c7bd575c895d))
+* **deps:** update dependency solid-js to ^1.8.15 ([#157](https://github.com/noriapi/hide-youtube-numbers/issues/157)) ([6149e33](https://github.com/noriapi/hide-youtube-numbers/commit/6149e33097ababe35a0ead4f2a04b6d6b32100a7))
+* **deps:** update dependency solid-js to ^1.8.16 ([#186](https://github.com/noriapi/hide-youtube-numbers/issues/186)) ([b88fb7a](https://github.com/noriapi/hide-youtube-numbers/commit/b88fb7abcd3f8ef88e946f65c359b452ac9e6db1))
+* **deps:** update dependency solid-js to ^1.8.8 ([#70](https://github.com/noriapi/hide-youtube-numbers/issues/70)) ([e3ddfb5](https://github.com/noriapi/hide-youtube-numbers/commit/e3ddfb5c607a37c21cb2dc72b9a26d586104b2c7))
+* **deps:** update dependency solid-js to ^1.8.9 ([#81](https://github.com/noriapi/hide-youtube-numbers/issues/81)) ([74ffd85](https://github.com/noriapi/hide-youtube-numbers/commit/74ffd857531dd98cb65ff96615f0e0af6426ead3))
+
 ## [0.3.1](https://github.com/noriapi/hide-youtube-numbers/compare/hide-youtube-numbers-v0.3.0...hide-youtube-numbers-v0.3.1) (2024-01-03)
 
 
