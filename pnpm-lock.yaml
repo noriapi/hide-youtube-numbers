@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^2.10.2
     version: 2.10.2(solid-js@1.8.16)(vite@5.2.8)
   wxt:
-    specifier: ^0.17.9
-    version: 0.17.9(@types/node@20.12.4)
+    specifier: ^0.17.12
+    version: 0.17.12(@types/node@20.12.4)
 
 packages:
 
@@ -5078,8 +5078,8 @@ packages:
         optional: true
     dev: true
 
-  /wxt@0.17.9(@types/node@20.12.4):
-    resolution: {integrity: sha512-ybMnwPDDXgoa2dJV5j0anm3mjfIf6oH0skBDhto78a3jkwABxxQHi30mi1xmGb3Nb/vVdHN/PWPQ3sT5ZFh8qw==}
+  /wxt@0.17.12(@types/node@20.12.4):
+    resolution: {integrity: sha512-VedEvueLVP8Pi9DH0ikSqhQyGJ6uRWVycSicdLNxeGUmPTbExj7hhH5ZZM+SIgsIh9yQgVm7MPnVnobzmeJHJw==}
     engines: {node: '>=18', pnpm: '>=8'}
     hasBin: true
     dependencies:
