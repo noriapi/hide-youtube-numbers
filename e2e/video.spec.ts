@@ -80,7 +80,7 @@ test.describe("visiblity conform options", () => {
     ],
     [
       "subscribers in description",
-      ({ video }) => video.subscribersInDescription,
+      ({ video }) => video.subscribersInDescription.first(),
       ({ popup }) => popup.checkbox.subscribers,
       withExpandDescription(prepare),
     ],
@@ -95,7 +95,7 @@ test.describe("visiblity conform options", () => {
   testCases.forEach(([label, getTarget, getCheckbox, prepare]) => {
     if (label === "commentLikes") {
       // to render comments
-      test.use({ viewport: { width: 1600, height: 1200 } });
+      test.use({ viewport: { width: 1600, height: 2000 } });
     }
 
     test(label, async ({ page, extensionId, context }) => {
