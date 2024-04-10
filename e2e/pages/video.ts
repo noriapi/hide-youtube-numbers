@@ -19,10 +19,7 @@ export const openVideo = async (page: Page) => {
     .filter({ hasText: "subscribers" });
   const videoLikeButton = page.getByRole("button", { name: "like this video" });
   const videoLikes = videoLikeButton.getByText(/\d/);
-  const commentLikes = page
-    .locator("ytd-comment-renderer")
-    .getByLabel(/^\d.* likes$/)
-    .and(page.locator(":not([hidden])")); // there are hidden element `#vote-count-left`
+  const commentLikes = page.locator("#vote-count-middle");
   const sidePane = page.locator("ytd-watch-next-secondary-results-renderer");
   const relatedVideoViews = sidePane.getByText(/^\d.* views$/);
 
