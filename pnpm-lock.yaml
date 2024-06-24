@@ -23,10 +23,10 @@ devDependencies:
     specifier: ^0.10.7
     version: 0.10.7
   '@typescript-eslint/eslint-plugin':
-    specifier: ^7.14.0
+    specifier: ^7.14.1
     version: 7.14.1(@typescript-eslint/parser@7.14.1)(eslint@8.57.0)(typescript@5.5.2)
   '@typescript-eslint/parser':
-    specifier: ^7.14.0
+    specifier: ^7.14.1
     version: 7.14.1(eslint@8.57.0)(typescript@5.5.2)
   conditional-type-checks:
     specifier: ^1.0.6
