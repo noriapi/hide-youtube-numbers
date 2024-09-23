@@ -32,7 +32,7 @@
     "zip:firefox": "wxt zip -b firefox"
   },
   "dependencies": {
-    "solid-js": "^1.8.22"
+    "solid-js": "^1.8.23"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
